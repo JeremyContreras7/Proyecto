@@ -1,0 +1,79 @@
+body, html{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+select{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+input::placeholder, textarea::placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+label{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input{
+    margin-top: 3px;
+}
+
+input[type="text"]{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif; 
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+input[type="number"]{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif; 
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.guardarDatos{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    cursor: pointer;
+    height: 30px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #0cc2a9;
+    color: #ffffff;
+    font-size: 16px;
+    width: 160px;
+    height: 35px;
+    align-items: center;
+}
+
+.guardarDatos:hover{
+    background-color: #0c8574;
+}
+
+
+.divRegistrar{
+    width: 310px;
+    margin-top: 50px;
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -0%);
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 10px;
+}
+
+.tituloRegistrar{
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}

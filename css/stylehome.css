@@ -1,0 +1,71 @@
+body {
+    background-image: url('../img/fondo.jpg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta correcta de tu imagen */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+}
+
+
+button {
+    height: 70px;
+    width: 140px;
+    margin: 20px;
+    font-size: 16px;
+    background-color: #163be0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+a {
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white; /* Hereda el color del texto del contenedor padre (button) */
+    background-color: #163be0;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+a:hover{
+    color: #000000;
+    transition: 0.5s;
+}
+
+button + button {
+    margin-top: 20px; /* Añade margen superior al segundo botón */
+}
+.hala {
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.hala h2 {
+    margin-top: 0;
+}
+
+.hala form {
+    margin-bottom: 0;
+}
+
+.hala label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+.hala p {
+    margin: 5px 0;
+}

@@ -1,0 +1,100 @@
+body {
+    background-image: url('../img/fondoPrueba.jpg');
+    background-size: 120% 120%;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+}
+form {
+    width: 400px;
+    height: 400px;
+    margin: 30px auto;
+    background-color: #008080; /* Color de fondo azul oscuro */
+    padding: 20px;
+    border-radius: 8%; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra ligera */
+}
+button {
+    width: 250px;
+    padding: 10px;
+    background-color: #d0d544;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-size: 18px;
+    
+}
+p {
+    float: left;
+    margin-top: 15px;
+    color: #fff; /* Texto blanco */
+    margin-left: 5px;
+}
+a {
+    color: #1c11eb;
+    text-decoration: none;
+}
+img {
+    width: 175px;
+    height: 175px;
+    margin-top: 20px;
+}
+
+.cajaentradatexto {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Garantiza que el ancho sea 100% incluyendo el relleno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
+    -moz-appearance: none;
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid #5e5e5e; /* Color del borde del checkbox */
+    background-color: #ffffff; /* Color de fondo del checkbox */
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3498db; /* Cambia el color de fondo cuando está seleccionado */
+    border: 2px solid #ffffff; /* Cambia el color del borde cuando está seleccionado */
+    color: #ffffff; /* Cambia el color del texto cuando está seleccionado */
+  }
+
+select{
+    float: left;
+    margin-top: 8px;
+    margin-left: 65px;
+    width: 155px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: #8f922d;
+    transition: 0.3s;
+}
+
+h1{
+    color: #fff;
+    
+}
+
+

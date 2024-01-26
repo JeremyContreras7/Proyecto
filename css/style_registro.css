@@ -1,0 +1,57 @@
+/* Resetear estilos por defecto del navegador */
+body, h1, h2, h3, p, ul, ol, li, form, fieldset, input, select {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+/* Contenido principal */
+#page-wrapper {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario de registro */
+.grupo-entradas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuario,
+.cajaentradatexto,
+#txtpassword,
+#run,
+select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkboxvai {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos adicionales */
+/* Agrega estilos específicos según tus necesidades */

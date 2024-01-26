@@ -1,0 +1,40 @@
+body {
+   /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta correcta de tu imagen */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+}
+form {
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #008080; /* Color de fondo azul oscuro */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Garantiza que el ancho sea 100% incluyendo el relleno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #dfe70d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados */
+}

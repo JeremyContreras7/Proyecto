@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+.barraNavegacion{
+    background-color: #0cc2a9;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.barraNavegacionSuperior{
+    overflow: hidden;
+    background-color: #b4e9e1;
+}
+
+.a-nav{
+    margin: 20px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: font-size 0.4s, border-bottom 0.4s;
+    font-size: 18px;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.a-nav:hover{
+    color: black;
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+.logoBarra{
+    height: 80px;
+    width: auto;
+    float: left; /* La imagen se sitúa a la izquierda */
+    margin-right: 30px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.tituloBarra{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 35px;
+    float: left;
+}
+
+.usuarioBarra{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: right;
+    margin-top: 37px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.botonCerrarSesion{
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 0.2s, color 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: 28px;
+    margin-right: 50px;
+}
+
+.botonCerrarSesion:hover{
+    background-color: #0cc2a9;
+    color: #ffffff;
+}
+

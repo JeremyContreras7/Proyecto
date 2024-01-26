@@ -1,0 +1,83 @@
+body{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #f0f8ff;
+}
+
+.container{
+  text-align: center;
+}
+
+.table-style {
+  width: 80%;
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 18px;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+/* Estilos para las filas impares (gris) */
+.table-style tr:nth-child(odd) {
+  background-color: #ffffff;
+  font-size: 18px;
+}
+
+/* Estilos para las filas pares (blanco) */
+.table-style tr:nth-child(even) {
+  background-color: #ffffff;
+  font-size: 18px;
+}
+
+/* Estilos para las celdas de la tabla */
+.table-style td,
+.table-style th {
+  border: 1px solid #949494;
+  padding: 8px;
+  text-align: left;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Estilos para el encabezado de la tabla */
+.table-style th {
+  background-color: #0cc6ae;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.table-style td a {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.generarPdf{
+  margin-left: 10%;
+  background-color: #0cc6ae;
+  border: 1px solid rgb(78, 78, 78);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.generarPdf:hover{
+  background-color: #078b7a;
+}
+
+.tituloTabla{
+  margin-left: 10%;
+  margin-top: 40px;
+}
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 130px;
+}
