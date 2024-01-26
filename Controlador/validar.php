@@ -59,13 +59,13 @@ if ($nr == 0 && $rn==0)
 
 if(mysqli_query($konexta,$queryregistrar))
 {
-	echo "<script> alert('Usuario registrado: $nombre2 RUT: $miRut');window.location= '../Vista/registrar.php' </script>";
+	echo "<script> alert('Usuario registrado: $nombre2 RUT: $miRut');window.location= '../Vista/Admin/registrar.php' </script>";
 }
 
 }
 else
 {
-		echo "<script> alert('Este correo está registrado o RUT registrado: $nombre RUT:$miRut');window.location= '../Vista/registrar.php' </script>";
+		echo "<script> alert('Este correo está registrado o RUT registrado: $nombre RUT:$miRut');window.location= '../Vista/Admin/registrar.php' </script>";
 }
 
 } 

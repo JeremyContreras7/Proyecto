@@ -21,9 +21,13 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             // Puedes elegir entre eliminar o actualizar los registros dependiendo de tus necesidades
             // Vamos a eliminar los registros relacionados en este ejemplo
 
-            $eliminarHistorialQuery = "DELETE FROM historialventa WHERE producto_id = $id";
-            $konexta->query($eliminarHistorialQuery);
+            $eliminarHistorialVentaQuery = "DELETE FROM historialventa WHERE producto_id = $id";
+            $konexta->query($eliminarHistorialVentaQuery);
         }
+
+        // Ahora, puedes eliminar los registros relacionados en la tabla historial_stock
+        $eliminarHistorialStockQuery = "DELETE FROM historial_stock WHERE producto_id = $id";
+        $konexta->query($eliminarHistorialStockQuery);
 
         // Ahora, puedes eliminar el producto
         $eliminarProductoQuery = "DELETE FROM productos WHERE id = $id";

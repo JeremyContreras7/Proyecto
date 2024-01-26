@@ -125,14 +125,8 @@ if (isset($_SESSION['roles'])) {
     <title>Ayuda</title>
 </head>
 <body>
-
-    <header>
-        <h1>Ayuda </h1><br>
-    </header>
-
-
     <section>
-        <h2>Preguntas Frecuentes</h2>
+        <h2>Preguntas Frecuentes</h2><br>
 
         <article>
             <h3>¿Cómo ingresar un nuevo producto?</h3>

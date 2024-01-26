@@ -150,7 +150,7 @@ if (isset($_SESSION['roles'])) {
     <link rel="stylesheet" href="../css/styletable.css">    
     <link rel="stylesheet" href="/css/style_nav.css">
     <link rel="icon" href="/img/logo.png">
-    <title>Historial de Descuento</title>
+    <title>Historial </title>
     <style>
         #imagen-preview {
             max-width: 200px;
@@ -160,7 +160,7 @@ if (isset($_SESSION['roles'])) {
 </head>
 
 <body>
-    <h2 class="tituloTabla" >Historial de Descuento de Stock</h2>
+    <h2 class="tituloTabla" >Historial de Cantidad agregada de Stock</h2>
     <button onclick="window.location.href='agregarpdf.php'">Descargar en PDF</button>
 <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
     <table border="1" class="table-style">
@@ -169,7 +169,7 @@ if (isset($_SESSION['roles'])) {
                 <th>ID</th>
                 <th>ID Producto</th>
                 <th>Nombre Producto</th>
-                <th>Cantidad Vendida</th>
+                <th>Cantidad Agregada</th>
                 <th>Fecha</th>
             </tr>
         </thead>

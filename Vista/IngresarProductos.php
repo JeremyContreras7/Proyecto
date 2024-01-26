@@ -153,7 +153,7 @@ if (isset($_SESSION['roles'])) {
 <div class="divRegistrar">
 
 <h1>Registrar Producto</h1>
-    <form method="POST" enctype="multipart/form-data" action="../validar.php">
+    <form method="POST" enctype="multipart/form-data" action="../Controlador/validar.php">
         <label for="nombre">Nombre del Producto:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
         <label for="codigo">Codigo del Producto:</label>
@@ -193,8 +193,8 @@ if (isset($_SESSION['roles'])) {
         <input type="file" id="imagen" name="imagen" onchange="mostrarVistaPrevia()"><br><br>
 
         <img id="imagen-preview" src="#" alt="Vista Previa de la Foto" style="display: none;"><br><br>
-
-        <button type="submit">Guardar Datos</button>
+        
+        <button type="submit">Guardar Datos</button><br><br>
         <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
 
     </form>
@@ -277,10 +277,10 @@ if (isset($_SESSION['roles'])) {
                         <td><?php echo $data['nombre']; ?></td>
                         <td class="<?php echo $stockClass; ?>"><?php echo $data['cantidad']; ?></td>
                         <td><?php echo $data['categoria']; ?></td>
-                        <td><a class="a_tabla" href='agregar.php?id=<?php echo $data['id']; ?>'>Agregar Mas Stock &#10133;</a></td>
+                        <td><a   class="a_tabla" href='agregar.php?id=<?php echo $data['id']; ?>'>Agregar Mas Stock &#10133;</a></td>
                         <td><a class="a_tabla" href='Descuento.php?id=<?php echo $data['id']; ?>'>Realizar Entrega ✅</a></td>
                         <td><a class="a_tabla" href='editar.php?id=<?php echo $data['id']; ?>'>Editar ✏️</a></td>
-                        <td><a class="a_tabla" href='eliminar.php?id=<?php echo $data['id']; ?>'>Eliminar ❌</a></td>
+                        <td><a class="a_tabla" onclick="eliminarProducto(<?php echo $data['id']; ?>)" href='#'>Eliminar ❌</a></td>
                     </tr>
                     <?php
                 }
@@ -288,6 +288,17 @@ if (isset($_SESSION['roles'])) {
             ?>
         </tbody>
     </table>
+
+<script>
+    function eliminarProducto(id) {
+        if(confirm('¿Está seguro que desea eliminar este producto?')) {
+            window.location = 'eliminar.php?id=' + id + '&action=confirm';
+        } else {
+            alert('El producto no ha sido eliminado.');
+            window.location = 'IngresarProductos.php';
+        }
+    }
+</script>
 
     <script>
         function mostrarVistaPrevia() {
