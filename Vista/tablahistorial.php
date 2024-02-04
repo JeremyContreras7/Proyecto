@@ -1,16 +1,19 @@
 <?php
+// Iniciar sesión
 session_start();
+// Mostrar todos los errores
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// Incluir el archivo de conexión
+// Incluir el archivo de conexión a la base de datos
 $konexta = mysqli_connect("localhost", "root", "", "imagen");
 
+// Verificar si hay error de conexión
 if ($konexta->connect_errno) {
     echo "No hay conexión: (" . $konexta->connect_errno . ") " . $konexta->connect_error;
 }
 
-// Verificar la conexión
+// Verificar la conexión y mostrar mensaje de error en caso de fallo
 if ($konexta->connect_error) {
     die("Error de conexión: " . $konexta->connect_error);
 }
@@ -33,124 +36,131 @@ $num_rows_historial = $resultHistorial->num_rows;
 $resultProductos = $konexta->query("SELECT * FROM productos");
 $num_rows_productos = $resultProductos->num_rows;
 
+// Verificar si el usuario está logueado y mostrar la barra de navegación correspondiente
 if (isset($_SESSION['roles'])) {
     if ($_SESSION['roles'] == 'ADMIN') {
         ?>
+        <!-- Barra de navegación para el rol de ADMIN -->
         <div class="barraNavegacionSuperior">
-        <a href="Admin/HomeAdmin.php">
-            <img src="../../img/logo.png" alt="Logo" class="logoBarra">
-        </a>
-        <h2 class="tituloBarra">Inventario DEM</h2>
-        <div class="cerrarSesion">
-            <form action="../Controlador/cerrar_sesion.php" method="post">
-                <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
-            </form>
-            <h3 class="usuarioBarra">
-                <?php
-               
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
-                if (isset($_SESSION['nombre'])) {
-                    echo "Bienvenido/a, " . $_SESSION['nombre'];
-                }
-                ?>
-            </h3>
+            <!-- Logo y título -->
+            <a href="Admin/HomeAdmin.php">
+                <img src="../../img/logo.png" alt="Logo" class="logoBarra">
+            </a>
+            <h2 class="tituloBarra">Inventario DEM</h2>
+            <!-- Botón de cierre de sesión y mensaje de bienvenida -->
+            <div class="cerrarSesion">
+                <form action="../Controlador/cerrar_sesion.php" method="post">
+                    <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
+                </form>
+                <h3 class="usuarioBarra">
+                    <?php
+                    // Mostrar mensaje de bienvenida si existe la sesión y tiene un nombre de usuario
+                    if (isset($_SESSION['nombre'])) {
+                        echo "Bienvenido/a, " . $_SESSION['nombre'];
+                    }
+                    ?>
+                </h3>
+            </div>
         </div>
-    </div>
-    <div class="barraNavegacion">
-        <nav>
-            <a href="IngresarProductos.php" class="a-nav">Registrar</a>
-            <a href="tablas.php" class="a-nav">Ver Insumos</a>
-            <a href="historialdos.php" class="a-nav">Stock (+)</a>
-            <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
-            <a href="Admin/registrar.php" class="a-nav">Registrar Usuario</a>
-            <a href="soporte.php" class="a-nav">Soporte</a>
-            <a href="ayuda.php" class="a-nav">Ayuda</a>
-        </nav>
-    </div>
+        <!-- Menú de navegación -->
+        <div class="barraNavegacion">
+            <nav>
+                <a href="IngresarProductos.php" class="a-nav">Registrar</a>
+                <a href="tablas.php" class="a-nav">Ver Insumos</a>
+                <a href="historialdos.php" class="a-nav">Stock (+)</a>
+                <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
+                <a href="Admin/registrar.php" class="a-nav">Registrar Usuario</a>
+                <a href="soporte.php" class="a-nav">Soporte</a>
+                <a href="ayuda.php" class="a-nav">Ayuda</a>
+            </nav>
+        </div>
         <?php
     } elseif ($_SESSION['roles'] == 'GESTION') {
         ?>
+        <!-- Barra de navegación para el rol de GESTION -->
         <div class="barraNavegacionSuperior">
-        <a href="Gestion/HomeGestion.php">
-            <img src="../../img/logo.png" alt="Logo" class="logoBarra">
-        </a>
-        <h2 class="tituloBarra">Inventario DEM</h2>
-        <div class="cerrarSesion">
-            <form action="../cerrar_sesion.php" method="post">
-                <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
-            </form>
-            <h3 class="usuarioBarra">
-                <?php
-                
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
-                if (isset($_SESSION['nombre'])) {
-                    echo "Bienvenido/a, " . $_SESSION['nombre'];
-                }
-                ?>
-            </h3>
+            <!-- Logo y título -->
+            <a href="Gestion/HomeGestion.php">
+                <img src="../../img/logo.png" alt="Logo" class="logoBarra">
+            </a>
+            <h2 class="tituloBarra">Inventario DEM</h2>
+            <!-- Botón de cierre de sesión y mensaje de bienvenida -->
+            <div class="cerrarSesion">
+                <form action="../cerrar_sesion.php" method="post">
+                    <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
+                </form>
+                <h3 class="usuarioBarra">
+                    <?php
+                    // Mostrar mensaje de bienvenida si existe la sesión y tiene un nombre de usuario
+                    if (isset($_SESSION['nombre'])) {
+                        echo "Bienvenido/a, " . $_SESSION['nombre'];
+                    }
+                    ?>
+                </h3>
+            </div>
         </div>
-    </div>
-    <div class="barraNavegacion">
-        <nav>
-            <a href="IngresarProductos.php" class="a-nav">Registrar</a>
-            <a href="tablas.php" class="a-nav">Ver Insumos</a>
-            <a href="historialdos.php" class="a-nav">Stock (+)</a>
-            <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
-            <a href="soporte.php" class="a-nav">Soporte</a>
-            <a href="ayuda.php" class="a-nav">Ayuda</a>
-        </nav>
-    </div>
+        <!-- Menú de navegación -->
+        <div class="barraNavegacion">
+            <nav>
+                <a href="IngresarProductos.php" class="a-nav">Registrar</a>
+                <a href="tablas.php" class="a-nav">Ver Insumos</a>
+                <a href="historialdos.php" class="a-nav">Stock (+)</a>
+                <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
+                <a href="soporte.php" class="a-nav">Soporte</a>
+                <a href="ayuda.php" class="a-nav">Ayuda</a>
+            </nav>
+        </div>
         <?php
     } else {
         ?>
+        <!-- Barra de navegación para usuarios con otro rol -->
         <div class="barraNavegacionSuperior">
-        <a href="Usuario/HomeUsuario.php">
-            <img src="../../img/logo.png" alt="Logo" class="logoBarra">
-        </a>
-        <h2 class="tituloBarra">Inventario DEM</h2>
-        <div class="cerrarSesion">
-            <form action="../Controlador/cerrar_sesion.php" method="post">
-                <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
-            </form>
-            <h3 class="usuarioBarra">
-                <?php
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
-                if (isset($_SESSION['nombre'])) {
-                    echo "Bienvenido/a, " . $_SESSION['nombre'];
-                }
-                ?>
-            </h3>
+            <!-- Logo y título -->
+            <a href="Usuario/HomeUsuario.php">
+                <img src="../../img/logo.png" alt="Logo" class="logoBarra">
+            </a>
+            <h2 class="tituloBarra">Inventario DEM</h2>
+            <!-- Botón de cierre de sesión y mensaje de bienvenida -->
+            <div class="cerrarSesion">
+                <form action="../Controlador/cerrar_sesion.php" method="post">
+                    <input type="submit" value="Cerrar Sesión" class="botonCerrarSesion">
+                </form>
+                <h3 class="usuarioBarra">
+                    <?php
+                    // Mostrar mensaje de bienvenida si existe la sesión y tiene un nombre de usuario
+                    if (isset($_SESSION['nombre'])) {
+                        echo "Bienvenido/a, " . $_SESSION['nombre'];
+                    }
+                    ?>
+                </h3>
+            </div>
         </div>
-    </div>
-    <div class="barraNavegacion">
-        <nav>
-            <a href="tablas.php" class="a-nav">Ver Insumos</a>
-            <a href="historialdos.php" class="a-nav">Stock (+)</a>
-            <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
-            <a href="soporte.php" class="a-nav">Soporte</a>
-            <a href="ayuda.php" class="a-nav">Ayuda</a>
-        </nav>
-    </div> 
-    <?php       
+        <!-- Menú de navegación -->
+        <div class="barraNavegacion">
+            <nav>
+                <a href="tablas.php" class="a-nav">Ver Insumos</a>
+                <a href="historialdos.php" class="a-nav">Stock (+)</a>
+                <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
+                <a href="soporte.php" class="a-nav">Soporte</a>
+                <a href="ayuda.php" class="a-nav">Ayuda</a>
+            </nav>
+        </div> 
+        <?php       
     }
 }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces a archivos CSS y favicon -->
     <link rel="stylesheet" href="../css/styletable.css">
     <link rel="stylesheet" href="/css/style_nav.css">
     <link rel="icon" href="/img/logo.png">
     <title>Historial de Descuento</title>
+    <!-- Estilos adicionales -->
     <style>
         #imagen-preview {
             max-width: 200px;
@@ -160,9 +170,11 @@ if (isset($_SESSION['roles'])) {
 </head>
 
 <body>
+    <!-- Título de la tabla y botones -->
     <h2 class="tituloTabla">Historial de Descuento de Stock</h2>
     <button onclick="window.location.href='descuentopdf.php'">Descargar en PDF</button>
     <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
+    <!-- Tabla de historial de descuentos -->
     <table border="1" class="table-style">
         <thead>
             <tr>
@@ -177,6 +189,7 @@ if (isset($_SESSION['roles'])) {
         </thead>
         <tbody>
             <?php
+            // Mostrar los registros del historial de descuentos
             if ($num_rows_historial > 0) {
                 while ($venta = $resultHistorial->fetch_assoc()) {
                     ?>
@@ -192,6 +205,7 @@ if (isset($_SESSION['roles'])) {
                     <?php
                 }
             } else {
+                // Mostrar un mensaje si no hay registros en el historial de ventas
                 echo "<tr><td colspan='4'>No hay historial de ventas registrado.</td></tr>";
             }
             ?>

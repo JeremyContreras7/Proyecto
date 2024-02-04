@@ -1,16 +1,20 @@
 <?php
+// Iniciar sesión para manejar variables de sesión
 session_start();
+
+// Configuración para mostrar todos los errores
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// Incluir el archivo de conexión
+// Incluir el archivo de conexión a la base de datos
 $konexta = mysqli_connect("localhost", "root", "", "imagen");
 
+// Verificar si hay error de conexión
 if ($konexta->connect_errno) {
     echo "No hay conexión: (" . $konexta->connect_errno . ") " . $konexta->connect_error;
 }
 
-// Verificar la conexión
+// Verificar la conexión y mostrar mensaje de error en caso de fallo
 if ($konexta->connect_error) {
     die("Error de conexión: " . $konexta->connect_error);
 }
@@ -33,8 +37,10 @@ $num_rows_historial = $resultHistorial->num_rows;
 $resultProductos = $konexta->query("SELECT * FROM productos");
 $num_rows_productos = $resultProductos->num_rows;
 
+// Verificar si hay sesión iniciada y el rol del usuario
 if (isset($_SESSION['roles'])) {
     if ($_SESSION['roles'] == 'ADMIN') {
+        // Mostrar barra de navegación para usuario con rol ADMIN
         ?>
         <div class="barraNavegacionSuperior">
         <a href="Admin/HomeAdmin.php">
@@ -47,9 +53,7 @@ if (isset($_SESSION['roles'])) {
             </form>
             <h3 class="usuarioBarra">
                 <?php
-               
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
+                // Mostrar nombre del usuario si hay sesión iniciada
                 if (isset($_SESSION['nombre'])) {
                     echo "Bienvenido/a, " . $_SESSION['nombre'];
                 }
@@ -59,6 +63,7 @@ if (isset($_SESSION['roles'])) {
     </div>
     <div class="barraNavegacion">
         <nav>
+            <!-- Enlaces de navegación para usuario con rol ADMIN -->
             <a href="IngresarProductos.php" class="a-nav">Registrar</a>
             <a href="tablas.php" class="a-nav">Ver Insumos</a>
             <a href="historialdos.php" class="a-nav">Stock (+)</a>
@@ -70,6 +75,7 @@ if (isset($_SESSION['roles'])) {
     </div>
         <?php
     } elseif ($_SESSION['roles'] == 'GESTION') {
+        // Mostrar barra de navegación para usuario con rol GESTION
         ?>
         <div class="barraNavegacionSuperior">
         <a href="Gestion/HomeGestion.php">
@@ -82,9 +88,7 @@ if (isset($_SESSION['roles'])) {
             </form>
             <h3 class="usuarioBarra">
                 <?php
-                
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
+                // Mostrar nombre del usuario si hay sesión iniciada
                 if (isset($_SESSION['nombre'])) {
                     echo "Bienvenido/a, " . $_SESSION['nombre'];
                 }
@@ -94,6 +98,7 @@ if (isset($_SESSION['roles'])) {
     </div>
     <div class="barraNavegacion">
         <nav>
+            <!-- Enlaces de navegación para usuario con rol GESTION -->
             <a href="IngresarProductos.php" class="a-nav">Registrar</a>
             <a href="tablas.php" class="a-nav">Ver Insumos</a>
             <a href="historialdos.php" class="a-nav">Stock (+)</a>
@@ -104,6 +109,7 @@ if (isset($_SESSION['roles'])) {
     </div>
         <?php
     } else {
+        // Mostrar barra de navegación para usuario con otro rol
         ?>
         <div class="barraNavegacionSuperior">
         <a href="Usuario/HomeUsuario.php">
@@ -116,8 +122,7 @@ if (isset($_SESSION['roles'])) {
             </form>
             <h3 class="usuarioBarra">
                 <?php
-
-                // Verificar si existe la sesión y tiene un nombre de usuario
+                // Mostrar nombre del usuario si hay sesión iniciada
                 if (isset($_SESSION['nombre'])) {
                     echo "Bienvenido/a, " . $_SESSION['nombre'];
                 }
@@ -127,6 +132,7 @@ if (isset($_SESSION['roles'])) {
     </div>
     <div class="barraNavegacion">
         <nav>
+            <!-- Enlaces de navegación para usuario con otro rol -->
             <a href="tablas.php" class="a-nav">Ver Insumos</a>
             <a href="historialdos.php" class="a-nav">Stock (+)</a>
             <a href="tablahistorial.php" class="a-nav">Stock (-)</a>
@@ -139,8 +145,6 @@ if (isset($_SESSION['roles'])) {
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,8 +165,11 @@ if (isset($_SESSION['roles'])) {
 
 <body>
     <h2 class="tituloTabla" >Historial de Cantidad agregada de Stock</h2>
+    <!-- Botón para descargar en PDF y para volver atrás -->
     <button onclick="window.location.href='agregarpdf.php'">Descargar en PDF</button>
-<button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
+    <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
+    
+    <!-- Tabla para mostrar el historial de cantidad agregada de stock -->
     <table border="1" class="table-style">
         <thead>
             <tr>
@@ -175,7 +182,9 @@ if (isset($_SESSION['roles'])) {
         </thead>
         <tbody>
             <?php
+            // Verificar si hay registros en el historial
             if ($num_rows_historial > 0) {
+                // Iterar sobre los registros y mostrar en la tabla
                 while ($venta = $resultHistorial->fetch_assoc()) {
                     ?>
                     <tr>
@@ -188,12 +197,14 @@ if (isset($_SESSION['roles'])) {
                     <?php
                 }
             } else {
+                // Mostrar mensaje en caso de no haber registros en el historial
                 echo "<tr><td colspan='4'>No hay historial de ventas registrado.</td></tr>";
             }
             ?>
         </tbody>
     </table>
     
+    <!-- Botón para volver atrás -->
     <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <?php
+// Configuración para mostrar todos los errores
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// Incluir el archivo de conexión
+// Incluir el archivo de conexión a la base de datos
 $konexta = mysqli_connect("localhost", "root", "", "imagen");
 
 // Verificar si se proporciona un ID válido en la URL
@@ -11,6 +12,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     // Verificar si se envió el formulario de edición
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Obtener datos del formulario
         $nombre = $_POST['nombre'];
         $codigo = $_POST['codigo'];
         $categoria = $_POST['categoria'];
@@ -20,6 +22,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $query = "UPDATE productos SET nombre='$nombre', codigo='$codigo', cantidad='$cantidad', categoria='$categoria' WHERE id='$id'";
         $resultado = $konexta->query($query);
 
+        // Verificar si la actualización fue exitosa
         if ($resultado) {
             echo "Se ha actualizado el producto correctamente";
         } else {
@@ -31,6 +34,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $queryProducto = "SELECT * FROM productos WHERE id='$id'";
     $resultadoProducto = $konexta->query($queryProducto);
 
+    // Verificar si se obtuvieron los datos del producto correctamente
     if ($resultadoProducto) {
         $data = $resultadoProducto->fetch_assoc();
     } else {
@@ -46,13 +50,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styleform.css">
+    <link rel="stylesheet" href="/css/style2.css">
     <link rel="icon" href="/img/logo.png">
     <title>Editar Producto</title>
 </head>
 
 <body>
-    <h1>Editar Producto</h1>
+    <h2>Editar Producto</h2>
+    <!-- Formulario para editar el producto -->
     <form method="POST">
         <label for="nombre">Nombre del Producto:</label>
         <input type="text" id="nombre" name="nombre" value="<?php echo $data['nombre']; ?>" required><br><br>
@@ -60,7 +65,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <input type="text" id="codigo" name="codigo" value="<?php echo $data['codigo']; ?>" required><br><br>
         <label for="cantidad">Cantidad:</label><br>
         <input type="number" id="cantidad" name="cantidad" value="<?php echo $data['cantidad']; ?>" required><br><br>
-        <select name="categoria" required>
+        <!-- Selector de categoría -->
+        <select name="categoria"  required>
 					<option disabled selected value=""><label>Seleccionar Categoria</label></option>
                     <option disabled selected value=""><label>TECNOLOGIA</label></option>
 					<option value="COMPUTADORES">COMPUTADORES</option>
@@ -86,11 +92,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 					<option value="TOALLAS">TOALLAS DE PAPEL Y PAÑUELOS</option>
                     <option value="LIMPIEZA">PRODUCTO DE LIMPIEZA</option>
                     <option value="ESCOBA">ESCOBA Y PALAS</option>		
-		</select>
+		</select><br><br><br><br>
 
-        <button type="submit">Guardar Cambios</button>
-        
+        <button type="submit">Guardar Cambios</button> <!-- Botón para enviar el formulario -->
+        <div class="back-button-container">
+            <a href="IngresarProductos.php">Volver</a> <!-- Botón para volver atrás -->
+        </div> 
     </form>
-    <a href="IngresarProductos.php"><button type="button">Volver</button></a>
 </body>
 </html>

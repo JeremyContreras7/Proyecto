@@ -11,7 +11,6 @@
 	<link rel="icon" href="/img/logo.png">
 
 </head>
-
 <body class="homepage is-preload">
 	<div id="page-wrapper">
 		<center>
@@ -20,11 +19,8 @@
 			<img src="img/logo1.png" alt="Logo">
 
 		</center>
-
-
 		<center>
-			
-			<!--Formulario para el login -->
+			<!--Formulario para el inicio de sesion -->
 			<form id="frmlogin" class="grupo-entradas" method="POST" action="Controlador/validar.php">
 			<h1>Bienvenido</h1>	
 				<input type="text" class="cajaentradatexto" placeholder="&#129492; Ingrese Nombre de Usuario" name="txtnombre" required>
@@ -40,9 +36,7 @@
 					</option>
 				</select>
 				<button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>
-
 			</form>
-
 		</center>
 		<!-- Scripts -->
 			<script src="../../assets/js/jquery.min.js"></script>
@@ -52,7 +46,6 @@
 			<script src="../../assets/js/breakpoints.min.js"></script>
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
-		
 </body>
 
 
