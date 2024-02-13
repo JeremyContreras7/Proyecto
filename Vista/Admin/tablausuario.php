@@ -15,10 +15,10 @@
     <table border="1" class="table-style">
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Rut</th>
-            <th>Rol</th>
+            <th>Nombre del usuario</th>
+            <th>Correo del usuario</th>
+            <th>Rut del usuario</th>
+            <th>Tipo de usuario</th>
             <th>Acciones</th> <!-- Columna para las acciones -->
         </tr>
         <?php
@@ -55,7 +55,7 @@
             $id_eliminar = $_GET['eliminar'];
             $sql_eliminar = "DELETE FROM login WHERE id='$id_eliminar'";
             if (mysqli_query($conexion, $sql_eliminar)) {
-                echo "<script>alert('Usuario eliminado exitosamente');</script>";
+                echo "<script>alert('Usuario eliminado exitosamente.');</script>";
                 echo "<script>window.location.href='tablausuario.php';</script>"; // Redireccionar para actualizar la tabla
             } else {
                 echo "ERROR: No se pudo eliminar el usuario. " . mysqli_error($conexion);

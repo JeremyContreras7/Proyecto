@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 
@@ -22,17 +21,17 @@
 		<center>
 			<!--Formulario para el inicio de sesion -->
 			<form id="frmlogin" class="grupo-entradas" method="POST" action="Controlador/validar.php">
-			<h1>Bienvenido</h1>	
+			<h1>¡Bienvenido!</h1>	
 				<input type="text" class="cajaentradatexto" placeholder="&#129492; Ingrese Nombre de Usuario" name="txtnombre" required>
 				<input type="email" class="cajaentradatexto" placeholder="&#128273; Ingrese Correo" name="txtusuario" required>
 				<input type="password" class="cajaentradatexto" placeholder="&#128274; Ingresar contraseña" name="txtpassword" id="txtpassword" required><input type="checkbox" onclick="verpassword()"> 
-				<p id="mostrarC">Mostrar contraseña</p>
+				<p id="mostrarC">Mostrar contraseña.</p>
 				<select name="rol" required>
-					<option disabled selected value=""><label>Seleccionar Rol</label></option>
-					<option value="USUARIO">USUARIO</option>
-					<option value="ADMIN">ADMIN</option>
+					<option disabled selected value=""><label>Tipo de usuario</label></option>
+					<option value="USUARIO">Usuario</option>
+					<option value="ADMIN">Administrador</option>
 					</option>
-					<option value="GESTION">GESTION</option>
+					<option value="GESTION">Gestion</option>
 					</option>
 				</select>
 				<button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>

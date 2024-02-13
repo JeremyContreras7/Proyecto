@@ -168,8 +168,8 @@ if (isset($_SESSION['roles'])) {
         <thead>
             <tr>
                 <th>Foto</th>
-                <th>Codigo Del Producto</th>
-                <th>Nombre Del Producto</th>
+                <th>Codigo del producto</th>
+                <th>Nombre del producto</th>
                 <th>Cantidad</th>
                 <th>Categoria</th>
             </tr>

@@ -66,6 +66,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <label for="cantidad">Cantidad:</label><br>
         <input type="number" id="cantidad" name="cantidad" value="<?php echo $data['cantidad']; ?>" required><br><br>
         <!-- Selector de categoría -->
+        <label for="categoria">Categoria:</label><br>
         <select name="categoria"  required>
 					<option disabled selected value=""><label>Seleccionar Categoria</label></option>
                     <option disabled selected value=""><label>TECNOLOGIA</label></option>

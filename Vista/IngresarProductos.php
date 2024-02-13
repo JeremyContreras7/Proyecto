@@ -93,8 +93,6 @@ if (isset($_SESSION['roles'])) {
             </form>
             <h3 class="usuarioBarra">
                 <?php
-                
-
                 // Verificar si existe la sesión y tiene un nombre de usuario
                 if (isset($_SESSION['nombre'])) {
                     echo "Bienvenido/a, " . $_SESSION['nombre'];
@@ -127,7 +125,7 @@ if (isset($_SESSION['roles'])) {
     <link rel="stylesheet" href="../css/styletable.css">
     <link rel="stylesheet" href="../css/style_gestionar.css">
     <link rel="icon" href="/img/logo.png">
-    <title>Ingresar Datos</title>
+    <title>Ingreso de productos</title>
     <style>
         #imagen-preview {
             max-width: 200px;
@@ -152,7 +150,7 @@ if (isset($_SESSION['roles'])) {
 <body>
 <div class="divRegistrar">
 
-<h1>Registrar Producto</h1>
+<h1>Registro de productos</h1>
     <form method="POST" enctype="multipart/form-data" action="../Controlador/validar.php">
         <label for="nombre">Nombre del Producto:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
@@ -196,6 +194,7 @@ if (isset($_SESSION['roles'])) {
         
         <button type="submit">Guardar Datos</button><br><br>
         <button onclick="window.location.href='<?php echo $paginaVolver; ?>'">Volver</button>
+        
 
     </form>
     </div>
@@ -206,11 +205,11 @@ if (isset($_SESSION['roles'])) {
             <tr>
                 <th>Foto</th>
                 <th>Codigo del Producto</th>
-                <th>Nombre Producto</th>
+                <th>Nombre del Producto</th>
                 <th>Cantidad</th>
                 <th>Categoria</th>
-                <th>Sumar</th>
-                <th>Restar</th>
+                <th>Agregar</th>
+                <th>Sacar</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -288,7 +287,6 @@ if (isset($_SESSION['roles'])) {
             ?>
         </tbody>
     </table>
-
 <script>
     function eliminarProducto(id) {
         if(confirm('¿Está seguro que desea eliminar este producto?')) {
@@ -299,20 +297,16 @@ if (isset($_SESSION['roles'])) {
         }
     }
 </script>
-
     <script>
         function mostrarVistaPrevia() {
             var input = document.getElementById('imagen');
             var vistaPrevia = document.getElementById('imagen-preview');
-
             if (input.files && input.files[0]) {
                 var lector = new FileReader();
-
                 lector.onload = function (e) {
                     vistaPrevia.src = e.target.result;
                     vistaPrevia.style.display = 'block';
                 }
-
                 lector.readAsDataURL(input.files[0]);
             } else {
                 vistaPrevia.src = '#';

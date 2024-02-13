@@ -175,7 +175,7 @@ if (isset($_SESSION['roles'])) {
             <tr>
                 <th>ID</th>
                 <th>ID Producto</th>
-                <th>Nombre Producto</th>
+                <th>Nombre del Producto</th>
                 <th>Cantidad Agregada</th>
                 <th>Fecha</th>
             </tr>

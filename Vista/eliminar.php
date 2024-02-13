@@ -39,7 +39,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         // Verificar si se eliminó el producto correctamente
         if ($resultado) {
             // Mostrar un mensaje de éxito y redirigir a la página de ingreso de productos
-            echo "<script>alert('Producto eliminado correctamente'); window.location='IngresarProductos.php';</script>";
+            echo "<script>alert('Producto eliminado correctamente.'); window.location='IngresarProductos.php';</script>";
 
         } else {
             // Mostrar un mensaje de error en caso de fallo al eliminar el producto

@@ -63,16 +63,16 @@
                 <input type="password" placeholder="&#128274 Ingresar contraseña" required name="txtpassword" id="txtpassword"><input type="checkbox" onclick="verpassword()"> Mostrar contraseña
           		<input type="text" id="run" name="run" required oninput="checkRut(this)" placeholder="&#128100 Ingrese RUT sin puntos" required maxlength="10">
 				<select name="rol">
-				<option value="0" style="display:none;"><label>Seleccionar rol</label></option>
-				<option value="USUARIO">USUARIO
+				<option value="0" style="display:none;"><label>Tipo de usuario</label></option>
+				<option value="USUARIO">Usuario
 				</option>
-				<option value="ADMIN">ADMIN</option>
+				<option value="ADMIN">Administrador</option>
 				</option>
-				<option value="GESTION">GESTION</option>
+				<option value="GESTION">Gestion</option>
 				</option>
 				</select>
 				<input type="checkbox" class="checkboxvai" required><a href="../terminos.php">He leído y acepto los términos y condiciones de uso.</a>
-                <button type="submit" type="button" name="btnregistrarx">Registrar</button><br>
+                <button type="submit" type="button" name="btnregistrarx">Registrar Usuario</button><br>
 				<button onclick="window.location.href='tablausuario.php'">Lista de usuarios</button>
 
         </form>

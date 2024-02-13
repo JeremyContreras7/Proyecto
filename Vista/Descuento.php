@@ -55,12 +55,12 @@
                     <input type="hidden" name="id" value="<?php echo $productoId; ?>">
                     <input type="hidden" name="nombre_usuario" value="<?php echo $_SESSION['nombre']; ?>">
                     <br><br>
-                    <label for="cantidad_vendida">Cantidad Vendida:</label>
+                    <label for="cantidad_vendida">Cantidad a sacar:</label>
                     <input type="number" id="cantidad_vendida" name="cantidad_vendida" required>
                     <label for="cliente">Destinatario:</label>
                     <input type="text" id="cliente" name="cliente" required>
                     <br><br>
-                    <button type="submit">Registrar Venta</button>
+                    <button type="submit">Registrar </button>
                     <div class="back-button-container">
                     <a href="IngresarProductos.php">Volver</a> <!-- Botón para volver atrás -->
                     </div>                
@@ -95,12 +95,12 @@
                     <input type="hidden" name="id" value="<?php echo $productoId; ?>">
                     <input type="hidden" name="nombre_usuario" value="<?php echo $_SESSION['nombre']; ?>">
                     <br><br>
-                    <label for="cantidad_vendida">Cantidad Vendida:</label>
+                    <label for="cantidad_vendida">Cantidad a sacar:</label>
                     <input type="number" id="cantidad_vendida" name="cantidad_vendida" required>
                     <label for="cliente">Destinatario:</label>
                     <input type="text" id="cliente" name="cliente" required>
                     <br><br>
-                    <button type="submit">Registrar Venta</button>
+                    <button type="submit">Registrar</button>
                     <div class="back-button-container">
                     <a href="IngresarProductos.php">Volver</a> <!-- Botón para volver atrás -->
                     </div> 

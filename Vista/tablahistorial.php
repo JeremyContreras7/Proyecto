@@ -179,9 +179,9 @@ if (isset($_SESSION['roles'])) {
         <thead>
             <tr>
                 <th>ID</th>
-                <th>ID Producto</th>
-                <th>Nombre Producto</th>
-                <th>Cantidad Vendida</th>
+                <th>ID producto</th>
+                <th>Nombre del producto</th>
+                <th>Cantidad sacada</th>
                 <th>Remitente</th>
                 <th>Destinatario</th>
                 <th>Fecha</th>

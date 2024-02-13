@@ -172,11 +172,11 @@ if (isset($_SESSION['roles'])) {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <img src="../img/logo_soporte.png" alt="logo">
         <div>
-            <label for="nombre">Nombre:</label>
+            <label for="nombre">Nombre del usuario:</label>
             <input type="text" id="nombre" name="nombre" required>
         </div>
         <div>
-            <label for="descripcion">Descripción:</label>
+            <label for="descripcion">Descripción del problema:</label>
             <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
         </div>
         <button type="submit">Enviar</button>
